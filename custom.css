@@ -147,6 +147,6 @@ body {
 }
 
 .navbar:hover .container-fluid {
-  opacity: 2; /*fully visible on :hover*/
+  opacity: 1; /*fully visible on :hover*/
   transition: all 0.1s;
 }
