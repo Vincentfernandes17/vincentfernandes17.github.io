@@ -1,0 +1,152 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #0a0a0a;
+}
+
+#nav1 a {
+  font-weight: 97;
+  position: relative;
+  text-decoration: none;
+  font-family: "Garamond", serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  padding: 0 20px 0 20px;
+}
+#nav1 a:after {
+  content: "";
+  position: absolute;
+  background-color: #fc7171;
+  height: 3px;
+  width: 0;
+  right: 12px;
+  left: 6px;
+  bottom: -3px;
+  transition: 0.2s;
+}
+#nav1 a:hover {
+  color: black;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+  font-weight: bold;
+
+  /* background-color: rgb(0, 0, 0);*/
+  border-radius: 5px;
+}
+#nav1 a:hover:after {
+  width: 90%;
+}
+
+.background {
+  background-image: url("img/dark2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  margin-left: -10px;
+  margin-right: -6px;
+  margin-top: -18px;
+  height: 650px;
+  width: auto;
+  max-width: 1400px;
+  top: 0;
+}
+.kaushan-script {
+  font-family: "kaushan script", cursive;
+  letter-spacing: 2px;
+  font-size: 11vw;
+  text-shadow: 2px 2px 10px black;
+}
+.zen-kurenai {
+  font-family: "zen kurenai", sans-serif;
+  letter-spacing: 1px;
+  font-size: 11vw;
+}
+.background2 {
+  margin-top: -10px;
+  padding-top: 2px;
+  height: auto;
+  background-color: rgb(182, 226, 255);
+}
+#about-background {
+  background-color: white;
+}
+.trirong {
+  font-family: "tritong", serif;
+}
+.trirong1 {
+  font-family: "tritong", serif;
+  text-shadow: -2px 2px 4px white;
+}
+.trirong2 {
+  font-family: "tritong", serif;
+  text-shadow: -2px 2px 4px rgb(0, 0, 0);
+}
+.background3 {
+  margin-top: -10px;
+  padding-top: 2px;
+  margin-bottom: 20px;
+  height: auto;
+  background-color: rgb(255, 189, 103);
+}
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+.background4 {
+  background-color: rgb(202, 255, 103);
+  height: auto;
+  margin-top: -10px;
+}
+.background5 {
+  background-color: rgb(255, 117, 117);
+  height: auto;
+  margin-top: -10px;
+}
+.background6 {
+  padding-bottom: 10px;
+  background-color: rgb(117, 223, 255);
+  height: auto;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInToright {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#nav1 {
+  opacity: 1;
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 1s ease-out 0.3s 1 slideInFromLeft;
+}
+
+.navbar .container-fluid {
+  opacity: 0.4; /*it doesn't show by default*/
+  transition: all 0.2s; /*pick whatever suits best*/
+}
+
+.navbar:hover .container-fluid {
+  opacity: 2; /*fully visible on :hover*/
+  transition: all 0.1s;
+}
