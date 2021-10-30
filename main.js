@@ -4,6 +4,7 @@ const btnKirim = document.querySelector(".btn-kirim");
 const btnLoading = document.querySelector(".btn-loading");
 const myAlert = document.querySelector(".my-alert");
 const myAlert2 = document.querySelector(".my-alert2");
+var myNav = document.getElementById("nav1");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -25,3 +26,14 @@ form.addEventListener("submit", (e) => {
       myAlert2.classList.toggle("d-none");
     });
 });
+
+window.onscroll = function () {
+  "use strict";
+  if (document.documentElement.scrollTop >= 100) {
+    myNav.classList.add("bg-dark");
+    myNav.classList.remove("bg-transparent");
+  } else {
+    myNav.classList.add("bg-transparent");
+    myNav.classList.remove("bg-dark");
+  }
+};

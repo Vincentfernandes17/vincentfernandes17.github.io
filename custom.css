@@ -16,7 +16,7 @@ body {
   font-family: "Garamond", serif;
   color: #ffffff;
   letter-spacing: 0.5px;
-  padding: 0 20px 0 20px;
+  padding: 0 15px 0 15px;
 }
 #nav1 a:after {
   content: "";
@@ -30,8 +30,8 @@ body {
   transition: 0.2s;
 }
 #nav1 a:hover {
-  color: black;
-  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+  color: white;
+  text-shadow: -1px -1px 2 black;
   font-weight: bold;
 
   /* background-color: rgb(0, 0, 0);*/
@@ -139,14 +139,4 @@ body {
   opacity: 1;
   /* This section calls the slideInFromLeft animation we defined above */
   animation: 1s ease-out 0.3s 1 slideInFromLeft;
-}
-
-.navbar .container-fluid {
-  opacity: 0.4; /*it doesn't show by default*/
-  transition: all 0.2s; /*pick whatever suits best*/
-}
-
-.navbar:hover .container-fluid {
-  opacity: 1; /*fully visible on :hover*/
-  transition: all 0.1s;
 }
