@@ -86,35 +86,34 @@ let about = document.querySelector("#About");
 let resume = document.querySelector("#Portfolio");
 let project = document.querySelector("#Projects");
 let contact = document.querySelector("#Contact");
-let footer = document.querySelector("#footer");
 
 window.addEventListener("scroll", () => {
   var windo = window.pageYOffset;
-  if (home.offsetTop <= windo && about.offsetTop - 100 > windo) {
+  if (home.offsetTop - 800 <= windo && about.offsetTop - 100 > windo) {
     document.querySelector(".home").setAttribute("id", "active");
     document.querySelector(".about").removeAttribute("id", "active");
     document.querySelector(".resume").removeAttribute("id", "active");
     document.querySelector(".project").removeAttribute("id", "active");
     document.querySelector(".contact").removeAttribute("id", "active");
-  } else if (about.offsetTop <= windo && resume.offsetTop - 500 > windo) {
+  } else if (about.offsetTop - 800 <= windo && resume.offsetTop - 500 > windo) {
     document.querySelector(".home").removeAttribute("id", "active");
     document.querySelector(".about").setAttribute("id", "active");
     document.querySelector(".resume").removeAttribute("id", "active");
     document.querySelector(".project").removeAttribute("id", "active");
     document.querySelector(".contact").removeAttribute("id", "active");
-  } else if (resume.offsetTop <= windo && project.offsetTop - 500 > windo) {
+  } else if (resume.offsetTop - 800 <= windo && project.offsetTop - 500 > windo) {
     document.querySelector(".home").removeAttribute("id", "active");
     document.querySelector(".about").removeAttribute("id", "active");
     document.querySelector(".resume").setAttribute("id", "active");
     document.querySelector(".project").removeAttribute("id", "active");
     document.querySelector(".contact").removeAttribute("id", "active");
-  } else if (project.offsetTop <= windo && contact.offsetTop > windo) {
+  } else if (project.offsetTop - 800 <= windo && contact.offsetTop - 300 > windo) {
     document.querySelector(".home").removeAttribute("id", "active");
     document.querySelector(".about").removeAttribute("id", "active");
     document.querySelector(".resume").removeAttribute("id", "active");
     document.querySelector(".project").setAttribute("id", "active");
     document.querySelector(".contact").removeAttribute("id", "active");
-  } else if (contact.offsetTop <= windo && resume.offsetTop - 100 < windo) {
+  } else if (contact.offsetTop - 800 <= windo) {
     document.querySelector(".home").removeAttribute("id", "active");
     document.querySelector(".about").removeAttribute("id", "active");
     document.querySelector(".resume").removeAttribute("id", "active");
