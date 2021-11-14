@@ -302,7 +302,7 @@
       </section>
     </div>
     <!--Separator here-->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="background-color: rgb(255, 117, 117)">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="background-color: rgb(239, 240, 184)">
       <path
         fill="rgb(202, 255, 103)"
         fill-opacity="1"
@@ -314,28 +314,39 @@
         <h1 class="text-center pt-3 fw-normal trirong1 display-5 py-5" data-aos="fade-up"><br />~Contact~</h1>
         <div class="row justify-content-center mx-2" data-aos="fade-down">
           <div class="col-md-8">
-            <form name="Portofolio-Contact-Form-vincentf">
+            <form name="Portofolio-Contact-Form-vincentf" class="needs-validation" id="validd" novalidate>
               <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
                 <strong>Thank You!</strong> Your message has been sent, please kindly wait for reply.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
               <div class="alert alert-danger alert-dismissible fade show d-none my-alert2" role="alert">
-                <strong>Error!</strong> Please wait a few second.
+                <strong>Error!</strong> Please fill in the blank.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" aria-describedby="name" name="name" required />
+                <input type="text" placeholder="text" class="form-control" id="name1" aria-describedby="name" id="namaa" value="" minlength="3" name="name" required />
                 <label for="floatingInput">-Full Name-</label>
+                <div class="valid-feedback">Name field is valid!</div>
+                <div class="invalid-feedback">Please provide a valid name, thank you!</div>
               </div>
               <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingPassword" aria-describedby="email" name="email" required />
+                <input type="email" placeholder="email" class="form-control" id="email1" aria-describedby="email" id="emaill" value="" minlength="3" name="email" required />
                 <label for="email">-Email-</label>
+                <div class="valid-feedback">Email field is valid!</div>
+                <div class="invalid-feedback">Please provide a valid email, thank you!</div>
               </div>
               <div class="form-floating mb-3">
-                <textarea type="text" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="pesan" style="height: 20vh" required></textarea>
-                <label for="comment">-Comment-</label>
+                <textarea type="text" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" id="pesann" value="" minlength="10" name="pesan" style="height: 20vh" required></textarea>
+                <label for="comment">-Message-</label>
+                <div class="valid-feedback">Massage field is valid!</div>
+                <div class="invalid-feedback">Please leave a valid message, thank you!</div>
               </div>
-              <button class="g-recaptcha" data-sitekey="6Lf8XywdAAAAAJ0KqUuz0745lhzdhFnekY65nPF9" data-callback="onSubmit" data-action="submit" id="form-submit">Submit</button>
+              <button type="submit" class="mx-auto d-block btn btn-primary btn-kirim" id="form-submit" onsubmit="validating();">Submit!</button>
+
+              <button class="btn btn-primary btn-loading mx-auto d-block d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
             </form>
           </div>
         </div>
@@ -343,7 +354,7 @@
         <br />
       </section>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="background-color: rgb(255, 117, 117)">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="background-color: rgb(239, 240, 184)">
       <path
         fill="rgb(117, 223, 255)"
         fill-opacity="1"
@@ -359,35 +370,6 @@
       ADD SCROLLSPY AND HIDE NAVBAR OR NAVBAR CHANGE COLOUR WHEN SCROLL    
 <script>
     window.addEventListener('DOMContentLoaded', event => {
-
-// Navbar shrink function
-var navbarShrink = function () {
-    const navbarCollapsible = document.body.querySelector('#mainNav');
-    if (!navbarCollapsible) {
-        return;
-    }
-    if (window.scrollY === 0) {
-        navbarCollapsible.classList.remove('navbar-shrink')
-    } else {
-        navbarCollapsible.classList.add('navbar-shrink')
-    }
-
-};
-
-// Shrink the navbar 
-navbarShrink();
-
-// Shrink the navbar when page is scrolled
-document.addEventListener('scroll', navbarShrink);
-
-// Activate Bootstrap scrollspy on the main nav element
-const mainNav = document.body.querySelector('#mainNav');
-if (mainNav) {
-    new bootstrap.ScrollSpy(document.body, {
-        target: '#mainNav',
-        offset: 74,
-    });
-};
 
 // Collapse responsive navbar when toggler is visible
 const navbarToggler = document.body.querySelector('.navbar-toggler');
@@ -412,17 +394,12 @@ responsiveNavItems.map(function (responsiveNavItem) {
     <script>
       AOS.init();
     </script>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script>
-      function onSubmit(token) {
-        document.getElementById("form-submit").submit();
-      }
-    </script>
+
+    <script></script>
   </body>
 </html>
 
 <!--
-penting: buat on load animation di js biar mantap terus pas scroll ke bawah baru animation jugo 
 portofolio(resume and alot shits), projects(github links and a image), contact(email, insta, tiktok, linkedin)
 quote: "Why be a follower when you can be a leader? Live your passion, follow your dreams." - Alvaretta Roberts
 “It has become appallingly obvious that our technology has exceeded our humanity.”

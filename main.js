@@ -4,28 +4,71 @@ const btnKirim = document.querySelector(".btn-kirim");
 const btnLoading = document.querySelector(".btn-loading");
 const myAlert = document.querySelector(".my-alert");
 const myAlert2 = document.querySelector(".my-alert2");
+var name1 = document.getElementById("name1");
 var myNav = document.getElementById("nav1");
+var empt = document.forms["Portofolio-Contact-Form-vincentf"]["name"].value;
+const forms = document.querySelectorAll(".needs-validation");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  //tombol loading tampilkan, hilangkan kirim
+function validating() {
+  const inpObj = document.getElementById("validd");
+  if (!inpObj.checkValidity()) {
+    console.log("fill the field >.<");
+  } else {
+    sending();
+  }
+}
+function sending() {
+  //if (form.querySelectorAll("was-valdiated")) {
+  console.log("starting to submit");
   btnLoading.classList.toggle("d-none");
   btnKirim.classList.toggle("d-none");
-
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) => {
-      //tombol loading hilangkan, hilangkan loading
       console.log("Success!", response);
       btnLoading.classList.toggle("d-none");
       btnKirim.classList.toggle("d-none");
       myAlert.classList.toggle("d-none");
       form.reset();
+      form.classList.remove("was-validated");
+      form.classList.add("requires-validation");
     })
     .catch((error) => {
       console.error("Error!", error.message);
       myAlert2.classList.toggle("d-none");
     });
+  //}
+}
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  validating();
 });
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  "use strict";
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const formss = document.querySelectorAll(".needs-validation");
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(formss).forEach(function (form) {
+    form.addEventListener(
+      "submit",
+      function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  });
+})();
+//var aa = document.getElementsByName("name").value;
+//var bb = document.getElementsByName("email").value;
+//var cc = document.getElementsByName("pesan").value;
 
 window.onscroll = function () {
   "use strict";
