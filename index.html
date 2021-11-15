@@ -314,7 +314,7 @@
         <h1 class="text-center pt-3 fw-normal trirong1 display-5 pb-5" data-aos="fade-up"><br />~Contact~</h1>
         <div class="row justify-content-center mx-2">
           <div class="col-md-8">
-            <form name="Portofolio-Contact-Form-vincentf" class="needs-validation" id="validd" novalidate>
+            <form name="Portofolio-Contact-Form-vincentf" class="needs-validation" id="validd" action="recaptcha.php" novalidate>
               <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
                 <strong>Thank You!</strong> Your message has been sent, please kindly wait for reply.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -341,6 +341,11 @@
                   <label for="comment">-Message-</label>
                   <div class="valid-feedback">Massage field is valid!</div>
                   <div class="invalid-feedback">Please leave a valid message, thank you!</div>
+                </div>
+                <div class="form-group">
+                  <div class="g-recaptcha" data-sitekey="6Ld7xDYdAAAAAALV-BxEDgkZ1-tlWTCaz1Eti4x2" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+                  <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha" />
+                  <div class="help-block with-errors"></div>
                 </div>
                 <button type="submit" class="mx-auto d-block btn btn-primary btn-kirim" id="form-submit" onsubmit="validating();">Submit!</button>
 
@@ -370,46 +375,53 @@
     </div>
     <!--
       ADD SCROLLSPY AND HIDE NAVBAR OR NAVBAR CHANGE COLOUR WHEN SCROLL    
-<script>
-    window.addEventListener('DOMContentLoaded', event => {
 
-// Collapse responsive navbar when toggler is visible
-const navbarToggler = document.body.querySelector('.navbar-toggler');
-const responsiveNavItems = [].slice.call(
-    document.querySelectorAll('#navbarResponsive .nav-link')
-);
-responsiveNavItems.map(function (responsiveNavItem) {
-    responsiveNavItem.addEventListener('click', () => {
-        if (window.getComputedStyle(navbarToggler).display !== 'none') {
-            navbarToggler.click();
-        }
-    });
-});
-
-});
-</script>
 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!--Google spreadsheet data-->
     <script src="main.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+      function sending() {
+        //if (form.querySelectorAll("was-valdiated")) {
+        console.log("starting to submit");
+        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            console.log("Success!", response);
+            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle("d-none");
+            myAlert.classList.toggle("d-none");
+            form.reset();
+            grecaptcha.reset();
+            form.classList.remove("was-validated");
+            form.classList.add("requires-validation");
+          })
+          .catch((error) => {
+            console.error("Error!", error.message);
+            myAlert2.classList.toggle("d-none");
+          });
+      }
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        validating();
+      });
+    </script>
+    <script type="text/javascript">
+      function validating() {
+        const inpObj = document.getElementById("validd");
+        if (!inpObj.checkValidity()) {
+          console.log("fill the field >.<");
+        } else {
+          sending();
+        }
+      }
+    </script>
     <script>
       AOS.init();
     </script>
-
-    <script></script>
   </body>
 </html>
-
-<!--
-portofolio(resume and alot shits), projects(github links and a image), contact(email, insta, tiktok, linkedin)
-quote: "Why be a follower when you can be a leader? Live your passion, follow your dreams." - Alvaretta Roberts
-“It has become appallingly obvious that our technology has exceeded our humanity.”
-Albert Einstein, Scientist
-
-“The Web as I envisaged it, we have not seen it yet. The future is still so much bigger than the past.”
-Tim Berners-Lee, Inventor of the World Wide Web.
-
-“Choose a job you love and you will never have to work a day in your life.” – Confucius
-
-    -->

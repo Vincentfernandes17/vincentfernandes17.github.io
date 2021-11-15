@@ -9,41 +9,6 @@ var myNav = document.getElementById("nav1");
 var empt = document.forms["Portofolio-Contact-Form-vincentf"]["name"].value;
 const forms = document.querySelectorAll(".needs-validation");
 
-function validating() {
-  const inpObj = document.getElementById("validd");
-  if (!inpObj.checkValidity()) {
-    console.log("fill the field >.<");
-  } else {
-    sending();
-  }
-}
-function sending() {
-  //if (form.querySelectorAll("was-valdiated")) {
-  console.log("starting to submit");
-  btnLoading.classList.toggle("d-none");
-  btnKirim.classList.toggle("d-none");
-  fetch(scriptURL, { method: "POST", body: new FormData(form) })
-    .then((response) => {
-      console.log("Success!", response);
-      btnLoading.classList.toggle("d-none");
-      btnKirim.classList.toggle("d-none");
-      myAlert.classList.toggle("d-none");
-      form.reset();
-      form.classList.remove("was-validated");
-      form.classList.add("requires-validation");
-    })
-    .catch((error) => {
-      console.error("Error!", error.message);
-      myAlert2.classList.toggle("d-none");
-    });
-  //}
-}
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  e.stopPropagation();
-  validating();
-});
-
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
   "use strict";
