@@ -3,7 +3,7 @@
 require('recaptcha-master/src/autoload.php');
 
 // configure
-// an email address that will be in the From field of the email.
+
 
 
 // If something goes wrong, we will display this message.
