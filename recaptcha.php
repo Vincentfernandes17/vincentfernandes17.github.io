@@ -41,7 +41,6 @@ try {
         
         // everything went well, we can compose the message, as usually
         
-        echo '<script type="text/javascript">console.log('succes')</script>';
     }
 } catch (\Exception $e) {
     $responseArray = array('type' => 'danger', 'message' => $e->getMessage());
