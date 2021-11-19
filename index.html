@@ -412,7 +412,7 @@
               <div class="help-block with-errors"></div>
             </div>
             <button type="submit" class="mx-auto d-block btn btn-primary btn-kirim" id="form-submit"
-              onsubmit="validating();" disabled>Submit!</button>
+              onsubmit="sending();" disabled>Submit!</button>
             <button class="btn btn-primary btn-loading mx-auto d-block d-none" type="button" disabled>
               <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
               Loading...
@@ -463,8 +463,7 @@
         sending();
       }
     }
-  </script>
-  <script>
+
     function sending() {
       //if (form.querySelectorAll("was-valdiated")) {
       console.log('starting to submit');
