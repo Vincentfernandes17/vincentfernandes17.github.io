@@ -1,0 +1,1 @@
+Hello my name is Vincent Fernandes. In this project, i tried to make my personal portfolio. And in my opinion it still lacking some art aspect and some other aspect. Please leave your feedback so i can continue to grow. Thank you!
