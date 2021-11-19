@@ -417,9 +417,11 @@
               <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
               Loading...
             </button>
+            <br>
           </div>
         </form>
       </div>
+      
   </div>
   </section>
   </div>
@@ -447,9 +449,10 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script type="text/javascript">
-    function verifyRecaptchaCallback(){
+    function verifyRecaptchaCallback() {
       var btnSubmit = document.querySelector('#form-submit');
       btnSubmit.removeAttribute('disabled');
+      validating();
     }
 
     function validating() {
