@@ -10,7 +10,7 @@ require('recaptcha-master/src/autoload.php');
 $errorMessage = 'There was an error while submitting the form. Please try again later';
 
 // ReCaptch Secret
-$recaptchaSecret = '6Ld7xDYdAAAAAPuSurPtemIfXuex8RjFT0T9N0Gy';
+$recaptchaSecret = '6LfD3EYdAAAAAIz9H5esinlGJpiool9rZP-3zyW5';
 
 // let's do the sending
 

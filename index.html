@@ -399,14 +399,15 @@
           <div class="form-floating mb-3 col-md-8">
             <textarea type="text" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
               id="pesann" value="" minlength="10" name="pesan" style="height: 20vh" required></textarea>
-            <label for="comment">-Messagee-</label>
+            <label for="comment">-Message-</label>
             <div class="valid-feedback">Massage field is valid!</div>
             <div class="invalid-feedback">Please leave a valid message, thank you!</div>
           </div>
           <div>
             <div class="form-group">
-              <div class="g-recaptcha" data-sitekey="6Ld7xDYdAAAAAALV-BxEDgkZ1-tlWTCaz1Eti4x2"
-                data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+              <div class="g-recaptcha" data-sitekey="6LfD3EYdAAAAAMkwdkiOLF_3Lqj79s-wUwY51rOq"
+                data-callback="verifyRecaptchaCallback" 
+                data-expired-callback="expiredRecaptchaCallback"></div>
               <input class="form-control d-none" data-recaptcha="true" required
                 data-error="Please complete the Captcha" />
               <div class="help-block with-errors"></div>
@@ -421,7 +422,7 @@
           </div>
         </form>
       </div>
-      
+
   </div>
   </section>
   </div>
@@ -435,12 +436,12 @@
       <h1 class="fs-5 mx-auto d-block">Made with <i class="bi bi-heart-fill text-danger"></i> by <a
           href="https://www.instagram.com/vincentf__/" target="_blank" class="text-black fw-bold">Vincent Fernandes</a>
       </h1>
+      <small class="fw-normal">This site is protected by reCAPTCHA and the Google
+        <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+        <a href="https://policies.google.com/terms">Terms of Service</a> apply.</small>
     </footer>
   </div>
-  <!--
-      ADD SCROLLSPY AND HIDE NAVBAR OR NAVBAR CHANGE COLOUR WHEN SCROLL    
 
--->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
@@ -449,8 +450,7 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script type="text/javascript">
-  function sending() {
-      //if (form.querySelectorAll("was-valdiated")) {
+    function sending() {
       console.log('starting to submit');
       btnLoading.classList.toggle('d-none');
       btnKirim.classList.toggle('d-none');
@@ -485,11 +485,10 @@
       }
     }
 
-    
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      sending();
+      verifyRecaptchaCallback();
     });
   </script>
 

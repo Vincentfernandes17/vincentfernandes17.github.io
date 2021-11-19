@@ -9,6 +9,16 @@ body {
   background-color: #0a0a0a;
 }
 
+.g-recaptcha {
+  position: relative;
+  overflow: hidden;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+  overflow: hidden;
+}
+
 #nav1 a {
   font-weight: 97;
   position: relative;
