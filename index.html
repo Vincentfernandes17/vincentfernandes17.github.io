@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body id="home">
@@ -373,7 +374,7 @@
       </div>
       <div class="row justify-content-center mx-2" data-aos="fade-down">
         <form name="Portofolio-Contact-Form-vincentf" class="needs-validation row justify-content-center mx-2"
-          id="validd" action="recaptcha.php" data-aos="fade-down" novalidate>
+          id="validd"  data-aos="fade-down" novalidate>
 
           <div class="form-floating mb-3 col-md-4">
             <input type="text" placeholder="text" class="form-control" id="name1" aria-describedby="name" id="namaa"
@@ -406,8 +407,7 @@
           <div>
             <div class="form-group">
               <div class="g-recaptcha" data-sitekey="6LfD3EYdAAAAAMkwdkiOLF_3Lqj79s-wUwY51rOq"
-                data-callback="verifyRecaptchaCallback" 
-                data-expired-callback="expiredRecaptchaCallback"></div>
+                data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
               <input class="form-control d-none" data-recaptcha="true" required
                 data-error="Please complete the Captcha" />
               <div class="help-block with-errors"></div>
@@ -448,7 +448,6 @@
   <!--Google spreadsheet data-->
   <script src="main.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script type="text/javascript">
     function sending() {
       console.log('starting to submit');
