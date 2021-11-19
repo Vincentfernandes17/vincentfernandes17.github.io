@@ -412,7 +412,7 @@
               <div class="help-block with-errors"></div>
             </div>
             <button type="submit" class="mx-auto d-block btn btn-primary btn-kirim" id="form-submit"
-              onsubmit="validating();">Submit!</button>
+              onsubmit="validating();" disabled>Submit!</button>
             <button class="btn btn-primary btn-loading mx-auto d-block d-none" type="button" disabled>
               <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
               Loading...
@@ -447,6 +447,11 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script type="text/javascript">
+    function verifyRecaptchaCallback(){
+      var btnSubmit = document.querySelector('#form-submit');
+      btnSubmit.removeAttribute('disabled');
+    }
+
     function validating() {
       const inpObj = document.getElementById('validd');
       if (!inpObj.checkValidity()) {
