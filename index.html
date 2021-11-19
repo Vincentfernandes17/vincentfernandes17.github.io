@@ -449,22 +449,7 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script type="text/javascript">
-    function verifyRecaptchaCallback() {
-      var btnSubmit = document.querySelector('#form-submit');
-      btnSubmit.removeAttribute('disabled');
-      validating();
-    }
-
-    function validating() {
-      const inpObj = document.getElementById('validd');
-      if (!inpObj.checkValidity()) {
-        console.log('fill the field >.<');
-      } else {
-        sending();
-      }
-    }
-
-    function sending() {
+  function sending() {
       //if (form.querySelectorAll("was-valdiated")) {
       console.log('starting to submit');
       btnLoading.classList.toggle('d-none');
@@ -485,10 +470,26 @@
           myAlert2.classList.toggle('d-none');
         });
     }
+    function verifyRecaptchaCallback() {
+      var btnSubmit = document.querySelector('#form-submit');
+      btnSubmit.removeAttribute('disabled');
+      validating();
+    }
+
+    function validating() {
+      const inpObj = document.getElementById('validd');
+      if (!inpObj.checkValidity()) {
+        console.log('fill the field >.<');
+      } else {
+        sending();
+      }
+    }
+
+    
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      validating();
+      sending();
     });
   </script>
 
