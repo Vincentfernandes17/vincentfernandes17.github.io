@@ -23,8 +23,7 @@
                 if ($error != "") {
                     $error = '<div class="alert alert-danger" role="alert"><strong>There is an error with your form!</strong><br>' . $error . '</div>';
                 } else {
-                    <script>var btnSubmit = document.querySelector('#form-submit');
-      btnSubmit.removeAttribute('disabled');</script>
+                    
                 }
             }
         } else {
