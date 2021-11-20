@@ -373,7 +373,7 @@
                 <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha" />
                 <div class="help-block with-errors"></div>
               </div>
-              <button type="submit" class="mx-auto d-block btn btn-primary btn-kirim" id="form-submit" onsubmit="validating();" disabled>Submit!</button>
+              <button type="submit" class="mx-auto d-block btn btn-primary btn-kirim" id="form-submit" onsubmit="verifyRecaptchaCallback();" disabled>Submit!</button>
               <button class="btn btn-primary btn-loading mx-auto d-block d-none" type="button" disabled>
                             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                             Loading...
@@ -433,9 +433,9 @@
     }
 
     function verifyRecaptchaCallback() {
+      validating();
       var btnSubmit = document.querySelector('#form-submit');
       btnSubmit.removeAttribute('disabled');
-      validating();
     }
 
     function validating() {
@@ -443,7 +443,6 @@
       const inpObj = document.getElementById('validd');
       if (!inpObj.checkValidity()) {
         console.log('fill the field >.<');
-        return true;
       } else {
         btnSubmit.removeAttribute('disabled');
         console.log('starting to submit');
