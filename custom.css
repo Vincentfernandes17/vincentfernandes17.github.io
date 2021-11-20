@@ -5,6 +5,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: #0a0a0a;
 }
@@ -28,6 +29,7 @@ body {
   letter-spacing: 0.5px;
   padding: 0 18px 0 18px;
 }
+
 #nav1 a:after {
   content: '';
   position: absolute;
@@ -39,12 +41,13 @@ body {
   bottom: -3px;
   transition: 0.2s;
 }
+
 #nav1 a:hover {
   text-shadow: -1px -1px 2 black;
   font-weight: bold;
-
   border-radius: 5px;
 }
+
 #nav1 a:hover:after {
   width: 90%;
 }
@@ -53,7 +56,6 @@ body {
   background-image: url('img/dark2.png');
   background-repeat: no-repeat;
   background-size: cover;
-
   margin-left: -10px;
   margin-right: -6px;
   margin-top: -18px;
@@ -62,37 +64,45 @@ body {
   max-width: 1400px;
   top: 0;
 }
+
 .kaushan-script {
   font-family: 'kaushan script', cursive;
   letter-spacing: 2px;
   font-size: 11vw;
   text-shadow: 2px 2px 10px black;
 }
+
 .zen-kurenai {
   font-family: 'zen kurenai', sans-serif;
   letter-spacing: 1px;
   font-size: 11vw;
 }
+
 .background2 {
   margin-top: -10px;
   padding-top: 2px;
   height: auto;
   background-color: rgb(182, 226, 255);
 }
+
 #about-background {
   background-color: white;
 }
+
 .trirong {
   font-family: 'tritong', serif;
 }
+
 .trirong1 {
   font-family: 'tritong', serif;
   text-shadow: -2px 2px 4px white;
 }
+
 .trirong2 {
   font-family: 'tritong', serif;
   text-shadow: -2px 2px 4px rgb(0, 0, 0);
 }
+
 .background3 {
   margin-top: -10px;
   padding-top: 2px;
@@ -100,19 +110,23 @@ body {
   height: auto;
   background-color: rgb(255, 189, 103);
 }
+
 .montserrat {
   font-family: 'Montserrat', sans-serif;
 }
+
 .background4 {
   background-color: rgb(202, 255, 103);
   height: auto;
   margin-top: -10px;
 }
+
 .background5 {
   background-color: rgb(239, 240, 184);
   height: auto;
   margin-top: -10px;
 }
+
 .background6 {
   padding-bottom: 10px;
   background-color: rgb(117, 223, 255);
@@ -137,6 +151,7 @@ body {
     transform: translateX(0);
   }
 }
+
 @keyframes slideInFromTop {
   0% {
     transform: translateY(-100%);
@@ -145,6 +160,7 @@ body {
     transform: translateY(0);
   }
 }
+
 @keyframes slideInToright {
   0% {
     transform: translateX(0);
@@ -153,6 +169,7 @@ body {
     transform: translateX(100%);
   }
 }
+
 @keyframes fadein {
   from {
     opacity: 0;
@@ -161,21 +178,22 @@ body {
     opacity: 1;
   }
 }
+
 #nav1 {
   opacity: 1;
   /* This section calls the slideInFromLeft animation we defined above */
   animation: 1s ease-out 0.3s 1 slideInFromTop;
 }
+
 #active {
   border-radius: 8px;
-
   color: black;
   background: linear-gradient(155deg, rgba(26, 26, 191, 1) 0%, rgba(0, 212, 255, 1) 100%);
 }
 
 .container .card {
   max-width: 300px;
-  height: 36vh;
+  height: 210px;
   margin: 30px 10px;
   padding: 20px 15px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
