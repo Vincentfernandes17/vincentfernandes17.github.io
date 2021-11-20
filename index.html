@@ -363,11 +363,11 @@
     <section id="Contact">
       <h1 class="text-center pt-3 fw-normal trirong1 display-5 pb-5" data-aos="fade-up"><br />~Contact~</h1>
       <div class="row justify-content-center mx-2" data-aos="fade-down">
-        <div class="alert alert-success alert-dismissible fade show d-none my-alert col-md-7" role="alert">
+        <div class="alert alert-success alert-dismissible fade show d-none my-alert col-md-8" role="alert">
           <strong>Thank You!</strong> Your message has been sent, please kindly wait for reply.
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        <div class="alert alert-danger alert-dismissible fade show d-none my-alert2 col-md-7" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show d-none my-alert2 col-md-8" role="alert">
           <strong>Error!</strong> Please wait or refresh your page.
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
@@ -479,6 +479,7 @@
       const inpObj = document.getElementById('validd');
       if (!inpObj.checkValidity()) {
         console.log('fill the field >.<');
+        return false;
       } else {
         btnSubmit.removeAttribute('disabled');
         console.log('starting to submit');
