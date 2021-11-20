@@ -362,7 +362,7 @@
               <div class="invalid-feedback">Please provide a valid subject, thank you!</div>
             </div>
             <div class="form-floating mb-3 col-md-8">
-              <textarea type="text" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" id="pesann" value="" minlength="10" name="pesan" style="height: 20vh" required></textarea>
+              <textarea type="text" class="form-control" placeholder="Leave a comment here" id="pesan1" id="pesann" value="" minlength="10" name="pesan" style="height: 20vh" required></textarea>
               <label for="comment">-Message-</label>
               <div class="valid-feedback">Massage field is valid!</div>
               <div class="invalid-feedback">Please leave a valid message, thank you!</div>
@@ -408,40 +408,13 @@
   <script src="main.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script type="text/javascript">
-    function sending() {
-      console.log('starting to submit');
-      btnLoading.classList.toggle('d-none');
-      btnKirim.classList.toggle('d-none');
-      fetch(scriptURL, {
-          method: 'POST',
-          body: new FormData(form)
-        })
-        .then((response) => {
-          console.log('Success!', response);
-          btnLoading.classList.toggle('d-none');
-          btnKirim.classList.toggle('d-none');
-          myAlert.classList.toggle('d-none');
-          form.reset();
-          grecaptcha.reset();
-          form.classList.remove('was-validated');
-          form.classList.add('requires-validation');
-        })
-        .catch((error) => {
-          console.error('Error!', error.message);
-          myAlert2.classList.toggle('d-none');
-        });
-    }
-
-    function verifyRecaptchaCallback() {
-      validating();
-      var btnSubmit = document.querySelector('#form-submit');
-      btnSubmit.removeAttribute('disabled');
-    }
-
     function validating() {
       var btnSubmit = document.querySelector('#form-submit');
-      const inpObj = document.getElementById('validd');
-      if (!inpObj.checkValidity()) {
+      const inpObj1 = document.getElementById('name1');
+      const inpObj2 = document.getElementById('email1');
+      const inpObj3 = document.getElementById('subject1');
+      const inpObj4 = document.getElementById('pesan1');
+      if (!inpObj1.checkValidity() && !inpObj2.checkValidity() && !inpObj3.checkValidity() && !inpObj4.checkValidity()) {
         console.log('fill the field >.<');
       } else {
         btnSubmit.removeAttribute('disabled');
@@ -468,6 +441,43 @@
           });
       }
     }
+
+    function verifyRecaptchaCallback() {
+      validating();
+      var btnSubmit = document.querySelector('#form-submit');
+      btnSubmit.removeAttribute('disabled');
+    }
+
+
+
+    function sending() {
+
+      console.log('starting to submit');
+      btnLoading.classList.toggle('d-none');
+      btnKirim.classList.toggle('d-none');
+      fetch(scriptURL, {
+          method: 'POST',
+          body: new FormData(form)
+        })
+        .then((response) => {
+          console.log('Success!', response);
+          btnLoading.classList.toggle('d-none');
+          btnKirim.classList.toggle('d-none');
+          myAlert.classList.toggle('d-none');
+          form.reset();
+          grecaptcha.reset();
+          form.classList.remove('was-validated');
+          form.classList.add('requires-validation');
+        })
+        .catch((error) => {
+          console.error('Error!', error.message);
+          myAlert2.classList.toggle('d-none');
+        });
+    }
+
+
+
+
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
