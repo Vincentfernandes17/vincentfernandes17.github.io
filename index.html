@@ -374,7 +374,7 @@
       </div>
       <div class="row justify-content-center mx-2" data-aos="fade-down">
         <form name="Portofolio-Contact-Form-vincentf" class="needs-validation row justify-content-center mx-2"
-          id="validd"  data-aos="fade-down" novalidate>
+          id="validd" data-aos="fade-down" novalidate>
 
           <div class="form-floating mb-3 col-md-4">
             <input type="text" placeholder="text" class="form-control" id="name1" aria-describedby="name" id="namaa"
@@ -472,14 +472,16 @@
     function verifyRecaptchaCallback() {
       var btnSubmit = document.querySelector('#form-submit');
       btnSubmit.removeAttribute('disabled');
-      validating();
+      sending();
     }
 
     function validating() {
+      var btnSubmit = document.querySelector('#form-submit');
       const inpObj = document.getElementById('validd');
       if (!inpObj.checkValidity()) {
         console.log('fill the field >.<');
       } else {
+        btnSubmit.removeAttribute('disabled');
         sending();
       }
     }
