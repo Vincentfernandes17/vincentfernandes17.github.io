@@ -240,8 +240,8 @@ body {
   transition-delay: 0.3s;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 330px) {
   .container .card .imgContainer {
-    left: -2px;
+    left: -1px
   }
 }
