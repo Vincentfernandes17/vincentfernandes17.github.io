@@ -263,3 +263,9 @@ body {
     height: 47vh;
   }
 }
+
+@media (max-height: 750px) {
+  .container .card:hover {
+    height: 57vh;
+  }
+}
